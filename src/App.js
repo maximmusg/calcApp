@@ -6,7 +6,7 @@ const App = () => {
     console.log('Renderizacion de la app')
     return ( 
         <main className='react-calculator'> 
-            <Result value={'0'}/>
+            <Result value={'undefined'}/>
             <div className='numbers'>
                 <button>1</button>
                 <button>2</button>
