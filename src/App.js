@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MathOperations from './components/MathOperations';
 import Functions from './components/Functions';
 import Numbers from './components/Numbers';
@@ -7,13 +7,17 @@ import Result from './components/Result';
 import './App.css';
 
 const App = () => {
+    const [stack, setStack] = useState('')
 
     console.log('Renderizacion de la app')
     return ( 
         <main className='react-calculator'> 
-            <Result value={undefined}/>
+            <Result value={stack}/>
 
-            <Numbers onClickNumber={number => console.log('Click en number', number)}/>
+            <Numbers onClickNumber={number => {
+                console.log('Click en number', number)
+                setStack(stack + number)
+                }}/>
 
             <Functions 
                 onContentClear={() => console.log('Content clear')}
