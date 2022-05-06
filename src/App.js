@@ -12,11 +12,14 @@ const App = () => {
     const [stack, setStack] = useState('')
     
     const items = words(stack, /[^-^+^*/]+/g)
+    
+    const value = items.length > 0 ? items[items.length-1] : '0';
+    
+    console.log('Renderizacion de la app', value)
 
-    console.log('Renderizacion de la app', items)
     return ( 
         <main className='react-calculator'> 
-            <Result value={items[items.length-1]}/>
+            <Result value={value}/>
 
             <Numbers onClickNumber={number => {
                 console.log('Click en number', number)
